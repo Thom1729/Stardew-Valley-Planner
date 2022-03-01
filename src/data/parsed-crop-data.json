@@ -1,0 +1,2165 @@
+{
+  "16": {
+    "name": "Wild Horseradish",
+    "description": "A spicy root found in the spring.",
+    "id": 16,
+    "category": "Basic -81",
+    "sellPrice": 50,
+    "edibility": 5,
+    "rowInSpriteSheet": 23,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Spring Seeds",
+      "description": "An assortment of wild spring seeds.",
+      "id": 495,
+      "category": "Seeds -74",
+      "sellPrice": 35,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 105,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "24": {
+    "name": "Parsnip",
+    "description": "A spring tuber closely related to the carrot. It has an earthy taste and is full of nutrients.",
+    "id": 24,
+    "category": "Basic -75",
+    "sellPrice": 35,
+    "edibility": 10,
+    "rowInSpriteSheet": 0,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Parsnip Seeds",
+      "description": "Plant these in the spring. Takes 4 days to mature.",
+      "id": 472,
+      "category": "Seeds -74",
+      "sellPrice": 10,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 20,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 25
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "90": {
+    "name": "Cactus Fruit",
+    "description": "The sweet fruit of the prickly pear cactus.",
+    "id": 90,
+    "category": "Basic -79",
+    "sellPrice": 75,
+    "edibility": 30,
+    "rowInSpriteSheet": 41,
+    "seasonsToGrowIn": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "phaseDays": [
+      2,
+      2,
+      2,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": 3,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Cactus Seeds",
+      "description": "Can only be grown indoors. Takes 12 days to mature, and then produces fruit every 3 days.",
+      "id": 802,
+      "category": "Seeds -74",
+      "sellPrice": 0,
+      "edibility": -300,
+      "vendor": {
+        "oasis": {
+          "price": 150
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "188": {
+    "name": "Green Bean",
+    "description": "A juicy little bean with a cool, crisp snap.",
+    "id": 188,
+    "category": "Basic -75",
+    "sellPrice": 40,
+    "edibility": 10,
+    "rowInSpriteSheet": 1,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      3,
+      4
+    ],
+    "regrowAfterHarvest": 3,
+    "scythe": false,
+    "trellis": true,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Bean Starter",
+      "description": "Plant these in the spring. Takes 10 days to mature, but keeps producing after that. Grows on a trellis.",
+      "id": 473,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 60,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 75
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "190": {
+    "name": "Cauliflower",
+    "description": "Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients.",
+    "id": 190,
+    "category": "Basic -75",
+    "sellPrice": 175,
+    "edibility": 30,
+    "rowInSpriteSheet": 2,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      4,
+      4,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": true,
+    "harvest": {},
+    "seed": {
+      "name": "Cauliflower Seeds",
+      "description": "Plant these in the spring. Takes 12 days to produce a large cauliflower.",
+      "id": 474,
+      "category": "Seeds -74",
+      "sellPrice": 40,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 80,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 100
+        },
+        "travelingCart": {
+          "minPrice": 120,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "192": {
+    "name": "Potato",
+    "description": "A widely cultivated tuber.",
+    "id": 192,
+    "category": "Basic -75",
+    "sellPrice": 80,
+    "edibility": 10,
+    "rowInSpriteSheet": 3,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      2,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.2
+    },
+    "seed": {
+      "name": "Potato Seeds",
+      "description": "Plant these in the spring. Takes 6 days to mature, and has a chance of yielding multiple potatoes at harvest.",
+      "id": 475,
+      "category": "Seeds -74",
+      "sellPrice": 25,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 50,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 62
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "248": {
+    "name": "Garlic",
+    "description": "Adds a wonderful zestiness to dishes. High quality garlic can be pretty spicy.",
+    "id": 248,
+    "category": "Basic -75",
+    "sellPrice": 60,
+    "edibility": 8,
+    "rowInSpriteSheet": 4,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Garlic Seeds",
+      "description": "Plant these in the spring. Takes 4 days to mature.",
+      "id": 476,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 40,
+          "yearAvailable": 2
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "250": {
+    "name": "Kale",
+    "description": "The waxy leaves are great in soups and stir frys.",
+    "id": 250,
+    "category": "Basic -75",
+    "sellPrice": 110,
+    "edibility": 20,
+    "rowInSpriteSheet": 5,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": true,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Kale Seeds",
+      "description": "Plant these in the spring. Takes 6 days to mature. Harvest with the scythe.",
+      "id": 477,
+      "category": "Seeds -74",
+      "sellPrice": 35,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 70,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 87
+        },
+        "travelingCart": {
+          "minPrice": 105,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "252": {
+    "name": "Rhubarb",
+    "description": "The stalks are extremely tart, but make a great dessert when sweetened.",
+    "id": 252,
+    "category": "Basic -79",
+    "sellPrice": 220,
+    "edibility": -300,
+    "rowInSpriteSheet": 6,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      2,
+      2,
+      2,
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Rhubarb Seeds",
+      "description": "Plant these in the spring. Takes 13 days to mature.",
+      "id": 478,
+      "category": "Seeds -74",
+      "sellPrice": 50,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 150,
+          "maxPrice": 1000
+        },
+        "oasis": {
+          "price": 100
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "254": {
+    "name": "Melon",
+    "description": "A cool, sweet summer treat.",
+    "id": 254,
+    "category": "Basic -79",
+    "sellPrice": 250,
+    "edibility": 45,
+    "rowInSpriteSheet": 7,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      3,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": true,
+    "harvest": {},
+    "seed": {
+      "name": "Melon Seeds",
+      "description": "Plant these in the summer. Takes 12 days to mature.",
+      "id": 479,
+      "category": "Seeds -74",
+      "sellPrice": 40,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 80,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 100
+        },
+        "travelingCart": {
+          "minPrice": 120,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "256": {
+    "name": "Tomato",
+    "description": "Rich and slightly tangy, the Tomato has a wide variety of culinary uses.",
+    "id": 256,
+    "category": "Basic -75",
+    "sellPrice": 60,
+    "edibility": 8,
+    "rowInSpriteSheet": 8,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      2,
+      2,
+      2,
+      2,
+      3
+    ],
+    "regrowAfterHarvest": 4,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.05
+    },
+    "seed": {
+      "name": "Tomato Seeds",
+      "description": "Plant these in the summer. Takes 11 days to mature, and continues to produce after first harvest.",
+      "id": 480,
+      "category": "Seeds -74",
+      "sellPrice": 25,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 50,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 62
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "258": {
+    "name": "Blueberry",
+    "description": "A popular berry reported to have many health benefits. The blue skin has the highest nutrient concentration.",
+    "id": 258,
+    "category": "Basic -79",
+    "sellPrice": 50,
+    "edibility": 10,
+    "rowInSpriteSheet": 9,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      3,
+      3,
+      4,
+      2
+    ],
+    "regrowAfterHarvest": 4,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 3,
+      "maxHarvest": 3,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.02
+    },
+    "seed": {
+      "name": "Blueberry Seeds",
+      "description": "Plant these in the summer. Takes 13 days to mature, and continues to produce after first harvest.",
+      "id": 481,
+      "category": "Seeds -74",
+      "sellPrice": 40,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 80,
+          "yearAvailable": 1
+        },
+        "travelingCart": {
+          "minPrice": 120,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "260": {
+    "name": "Hot Pepper",
+    "description": "Fiery hot with a hint of sweetness.",
+    "id": 260,
+    "category": "Basic -79",
+    "sellPrice": 40,
+    "edibility": 5,
+    "rowInSpriteSheet": 10,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": 3,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.03
+    },
+    "seed": {
+      "name": "Pepper Seeds",
+      "description": "Plant these in the summer. Takes 5 days to mature, and continues to produce after first harvest.",
+      "id": 482,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 40,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 50
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "262": {
+    "name": "Wheat",
+    "description": "One of the most widely cultivated grains. Makes a great flour for breads and cakes.",
+    "id": 262,
+    "category": "Basic -75",
+    "sellPrice": 25,
+    "edibility": -300,
+    "rowInSpriteSheet": 11,
+    "seasonsToGrowIn": [
+      "summer",
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": true,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Wheat Seeds",
+      "description": "Plant these in the summer or fall. Takes 4 days to mature. Harvest with the scythe.",
+      "id": 483,
+      "category": "Seeds -74",
+      "sellPrice": 5,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 10,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 12
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "264": {
+    "name": "Radish",
+    "description": "A crisp and refreshing root vegetable with hints of pepper when eaten raw.",
+    "id": 264,
+    "category": "Basic -75",
+    "sellPrice": 90,
+    "edibility": 18,
+    "rowInSpriteSheet": 12,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      2,
+      1,
+      2,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Radish Seeds",
+      "description": "Plant these in the summer. Takes 6 days to mature.",
+      "id": 484,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 40,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 50
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "266": {
+    "name": "Red Cabbage",
+    "description": "Often used in salads and coleslaws. The color can range from purple to blue to green-yellow depending on soil conditions.",
+    "id": 266,
+    "category": "Basic -75",
+    "sellPrice": 260,
+    "edibility": 30,
+    "rowInSpriteSheet": 13,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Red Cabbage Seeds",
+      "description": "Plant these in the summer. Takes 9 days to mature.",
+      "id": 485,
+      "category": "Seeds -74",
+      "sellPrice": 50,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 100,
+          "yearAvailable": 2
+        },
+        "travelingCart": {
+          "minPrice": 150,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "268": {
+    "name": "Starfruit",
+    "description": "An extremely juicy fruit that grows in hot, humid weather. Slightly sweet with a sour undertone.",
+    "id": 268,
+    "category": "Basic -79",
+    "sellPrice": 750,
+    "edibility": 50,
+    "rowInSpriteSheet": 14,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Starfruit Seeds",
+      "description": "Plant these in the summer. Takes 13 days to mature.",
+      "id": 486,
+      "category": "Seeds -74",
+      "sellPrice": 200,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 600,
+          "maxPrice": 1000
+        },
+        "oasis": {
+          "price": 400
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "270": {
+    "name": "Corn",
+    "description": "One of the most popular grains. The sweet, fresh cobs are a summer favorite.",
+    "id": 270,
+    "category": "Basic -75",
+    "sellPrice": 50,
+    "edibility": 10,
+    "rowInSpriteSheet": 15,
+    "seasonsToGrowIn": [
+      "summer",
+      "fall"
+    ],
+    "phaseDays": [
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": 4,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Corn Seeds",
+      "description": "Plant these in the summer or fall. Takes 14 days to mature, and continues to produce after first harvest.",
+      "id": 487,
+      "category": "Seeds -74",
+      "sellPrice": 75,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 150,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 187
+        },
+        "travelingCart": {
+          "minPrice": 225,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "271": {
+    "name": "Unmilled Rice",
+    "description": "Rice in its rawest form. Run this through a mill to increase the value.",
+    "id": 271,
+    "category": "Basic -75",
+    "sellPrice": 30,
+    "edibility": 1,
+    "rowInSpriteSheet": 34,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": true,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 10,
+      "chanceForExtraCrops": 0.1
+    },
+    "seed": {
+      "name": "Rice Shoot",
+      "description": "Plant these in the spring. Takes 8 days to mature. Grows faster if planted near a body of water. Harvest with the scythe.",
+      "id": 273,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "272": {
+    "name": "Eggplant",
+    "description": "A rich and wholesome relative of the tomato. Delicious fried or stewed.",
+    "id": 272,
+    "category": "Basic -75",
+    "sellPrice": 60,
+    "edibility": 8,
+    "rowInSpriteSheet": 16,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": 5,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.002
+    },
+    "seed": {
+      "name": "Eggplant Seeds",
+      "description": "Plant these in the fall. Takes 5 days to mature, and continues to produce after first harvest.",
+      "id": 488,
+      "category": "Seeds -74",
+      "sellPrice": 10,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 20,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 25
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "274": {
+    "name": "Artichoke",
+    "description": "The bud of a thistle plant. The spiny outer leaves conceal a fleshy, filling interior.",
+    "id": 274,
+    "category": "Basic -75",
+    "sellPrice": 160,
+    "edibility": 12,
+    "rowInSpriteSheet": 17,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      2,
+      2,
+      1,
+      2,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Artichoke Seeds",
+      "description": "Plant these in the fall. Takes 8 days to mature.",
+      "id": 489,
+      "category": "Seeds -74",
+      "sellPrice": 15,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 30,
+          "yearAvailable": 2
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "276": {
+    "name": "Pumpkin",
+    "description": "A fall favorite, grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration.",
+    "id": 276,
+    "category": "Basic -75",
+    "sellPrice": 320,
+    "edibility": -300,
+    "rowInSpriteSheet": 18,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      3,
+      4,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": true,
+    "harvest": {},
+    "seed": {
+      "name": "Pumpkin Seeds",
+      "description": "Plant these in the fall. Takes 13 days to mature.",
+      "id": 490,
+      "category": "Seeds -74",
+      "sellPrice": 50,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 100,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 125
+        },
+        "travelingCart": {
+          "minPrice": 150,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "278": {
+    "name": "Bok Choy",
+    "description": "The leafy greens and fibrous stalks are healthy and delicious.",
+    "id": 278,
+    "category": "Basic -75",
+    "sellPrice": 80,
+    "edibility": 10,
+    "rowInSpriteSheet": 19,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Bok Choy Seeds",
+      "description": "Plant these in the fall. Takes 4 days to mature.",
+      "id": 491,
+      "category": "Seeds -74",
+      "sellPrice": 25,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 50,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 62
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "280": {
+    "name": "Yam",
+    "description": "A starchy tuber with a lot of culinary versatility.",
+    "id": 280,
+    "category": "Basic -75",
+    "sellPrice": 160,
+    "edibility": 18,
+    "rowInSpriteSheet": 20,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      3,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Yam Seeds",
+      "description": "Plant these in the fall. Takes 10 days to mature.",
+      "id": 492,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 60,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 75
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "282": {
+    "name": "Cranberries",
+    "description": "These tart red berries are a traditional winter food.",
+    "id": 282,
+    "category": "Basic -79",
+    "sellPrice": 75,
+    "edibility": 15,
+    "rowInSpriteSheet": 21,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "regrowAfterHarvest": 5,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 2,
+      "maxHarvest": 2,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.1
+    },
+    "seed": {
+      "name": "Cranberry Seeds",
+      "description": "Plant these in the fall. Takes 7 days to mature, and continues to produce after first harvest.",
+      "id": 493,
+      "category": "Seeds -74",
+      "sellPrice": 120,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 240,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 300
+        },
+        "travelingCart": {
+          "minPrice": 360,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "284": {
+    "name": "Beet",
+    "description": "A sweet and earthy root vegatable. As a bonus, the leaves make a great salad.",
+    "id": 284,
+    "category": "Basic -75",
+    "sellPrice": 100,
+    "edibility": 12,
+    "rowInSpriteSheet": 22,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Beet Seeds",
+      "description": "Plant these in the fall. Takes 6 days to mature.",
+      "id": 494,
+      "category": "Seeds -74",
+      "sellPrice": 10,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        },
+        "oasis": {
+          "price": 20
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "300": {
+    "name": "Amaranth",
+    "description": "A purple grain cultivated by an ancient civilization.",
+    "id": 300,
+    "category": "Basic -75",
+    "sellPrice": 150,
+    "edibility": 20,
+    "rowInSpriteSheet": 39,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": true,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Amaranth Seeds",
+      "description": "Plant these in the fall. Takes 7 days to grow. Harvest with the scythe.",
+      "id": 299,
+      "category": "Seeds -74",
+      "sellPrice": 35,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 70,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 87
+        },
+        "travelingCart": {
+          "minPrice": 105,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "304": {
+    "name": "Hops",
+    "description": "A bitter, tangy flower used to flavor beer.",
+    "id": 304,
+    "category": "Basic -75",
+    "sellPrice": 25,
+    "edibility": 18,
+    "rowInSpriteSheet": 37,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      2,
+      3,
+      4
+    ],
+    "regrowAfterHarvest": 1,
+    "scythe": false,
+    "trellis": true,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Hops Starter",
+      "description": "Plant these in the summer. Takes 11 days to grow, but keeps producing after that. Grows on a trellis.",
+      "id": 302,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 60,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 75
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "376": {
+    "name": "Poppy",
+    "description": "In addition to its colorful flower, the Poppy has culinary and medicinal uses.",
+    "id": 376,
+    "category": "Basic -80",
+    "sellPrice": 140,
+    "edibility": 18,
+    "rowInSpriteSheet": 28,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Poppy Seeds",
+      "description": "Plant in summer. Produces a bright red flower in 7 days.",
+      "id": 453,
+      "category": "Seeds -74",
+      "sellPrice": 50,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 100,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 125
+        },
+        "travelingCart": {
+          "minPrice": 150,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": [
+      {
+        "red": 255,
+        "green": 0,
+        "blue": 0
+      },
+      {
+        "red": 254,
+        "green": 254,
+        "blue": 254
+      },
+      {
+        "red": 255,
+        "green": 170,
+        "blue": 0
+      }
+    ]
+  },
+  "396": {
+    "name": "Spice Berry",
+    "description": "It fills the air with a pungent aroma.",
+    "id": 396,
+    "category": "Basic -79",
+    "sellPrice": 80,
+    "edibility": 10,
+    "rowInSpriteSheet": 23,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Summer Seeds",
+      "description": "An assortment of wild summer seeds.",
+      "id": 496,
+      "category": "Seeds -74",
+      "sellPrice": 55,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 165,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "398": {
+    "name": "Grape",
+    "description": "A sweet cluster of fruit.",
+    "id": 398,
+    "category": "Basic -79",
+    "sellPrice": 80,
+    "edibility": 15,
+    "rowInSpriteSheet": 38,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      2,
+      3,
+      3
+    ],
+    "regrowAfterHarvest": 3,
+    "scythe": false,
+    "trellis": true,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Grape Starter",
+      "description": "Plant these in the fall. Takes 10 days to grow, but keeps producing after that. Grows on a trellis.",
+      "id": 301,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 60,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 75
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "400": {
+    "name": "Strawberry",
+    "description": "A sweet, juicy favorite with an appealing red color.",
+    "id": 400,
+    "category": "Basic -79",
+    "sellPrice": 120,
+    "edibility": 20,
+    "rowInSpriteSheet": 36,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": 4,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 1,
+      "maxHarvest": 1,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.02
+    },
+    "seed": {
+      "name": "Strawberry Seeds",
+      "description": "Plant these in spring. Takes 8 days to mature, and keeps producing strawberries after that.",
+      "id": 745,
+      "category": "Seeds -74",
+      "sellPrice": 0,
+      "edibility": -300,
+      "vendor": {
+        "eggFestival": {
+          "price": 100
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "404": {
+    "name": "Common Mushroom",
+    "description": "Slightly nutty, with good texture.",
+    "id": 404,
+    "category": "Basic -81",
+    "sellPrice": 40,
+    "edibility": 15,
+    "rowInSpriteSheet": 23,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Fall Seeds",
+      "description": "An assortment of wild fall seeds.",
+      "id": 497,
+      "category": "Seeds -74",
+      "sellPrice": 45,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 135,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "412": {
+    "name": "Winter Root",
+    "description": "A starchy tuber.",
+    "id": 412,
+    "category": "Basic -81",
+    "sellPrice": 70,
+    "edibility": 10,
+    "rowInSpriteSheet": 23,
+    "seasonsToGrowIn": [
+      "winter"
+    ],
+    "phaseDays": [
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Winter Seeds",
+      "description": "An assortment of wild winter seeds.",
+      "id": 498,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "417": {
+    "name": "Sweet Gem Berry",
+    "description": "It's by far the sweetest thing you've ever smelled.",
+    "id": 417,
+    "category": "Basic -17",
+    "sellPrice": 3000,
+    "edibility": -300,
+    "rowInSpriteSheet": 32,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      2,
+      4,
+      6,
+      6,
+      6
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Rare Seed",
+      "description": "Sow in fall. Takes all season to grow.",
+      "id": 347,
+      "category": "Seeds -74",
+      "sellPrice": 200,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 600,
+          "maxPrice": 1000,
+          "price": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "421": {
+    "name": "Sunflower",
+    "description": "A common misconception is that the flower turns so it's always facing the sun.",
+    "id": 421,
+    "category": "Basic -80",
+    "sellPrice": 80,
+    "edibility": 18,
+    "rowInSpriteSheet": 30,
+    "seasonsToGrowIn": [
+      "summer",
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      3,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Sunflower Seeds",
+      "description": "Plant in summer or fall. Takes 8 days to produce a large sunflower. Yields more seeds at harvest.",
+      "id": 431,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 200,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 125
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "433": {
+    "name": "Coffee Bean",
+    "description": "Plant in spring or summer to grow a coffee plant. Place five beans in a keg to make coffee.",
+    "id": 433,
+    "category": "Seeds -74",
+    "sellPrice": 15,
+    "edibility": -300,
+    "rowInSpriteSheet": 40,
+    "seasonsToGrowIn": [
+      "spring",
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      3,
+      2
+    ],
+    "regrowAfterHarvest": 2,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 4,
+      "maxHarvest": 4,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.02
+    },
+    "seed": {
+      "name": "Coffee Bean",
+      "description": "Plant in spring or summer to grow a coffee plant. Place five beans in a keg to make coffee.",
+      "id": 433,
+      "category": "Seeds -74",
+      "sellPrice": 15,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000,
+          "price": 2500
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "454": {
+    "name": "Ancient Fruit",
+    "description": "It's been dormant for eons.",
+    "id": 454,
+    "category": "Basic -79",
+    "sellPrice": 550,
+    "edibility": -300,
+    "rowInSpriteSheet": 24,
+    "seasonsToGrowIn": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "phaseDays": [
+      2,
+      7,
+      7,
+      7,
+      5
+    ],
+    "regrowAfterHarvest": 7,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Ancient Seeds",
+      "description": "Could these still grow?",
+      "id": 499,
+      "category": "Seeds -74",
+      "sellPrice": 30,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "591": {
+    "name": "Tulip",
+    "description": "The most popular spring flower. Has a very faint sweet smell.",
+    "id": 591,
+    "category": "Basic -80",
+    "sellPrice": 30,
+    "edibility": 18,
+    "rowInSpriteSheet": 26,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Tulip Bulb",
+      "description": "Plant in spring. Takes 6 days to produce a colorful flower. Assorted colors.",
+      "id": 427,
+      "category": "Seeds -74",
+      "sellPrice": 10,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 20,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 25
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": [
+      {
+        "red": 255,
+        "green": 186,
+        "blue": 255
+      },
+      {
+        "red": 223,
+        "green": 191,
+        "blue": 255
+      },
+      {
+        "red": 255,
+        "green": 246,
+        "blue": 0
+      },
+      {
+        "red": 255,
+        "green": 80,
+        "blue": 0
+      },
+      {
+        "red": 255,
+        "green": 158,
+        "blue": 193
+      }
+    ]
+  },
+  "593": {
+    "name": "Summer Spangle",
+    "description": "A tropical bloom that thrives in the humid summer air. Has a sweet, tangy aroma.",
+    "id": 593,
+    "category": "Basic -80",
+    "sellPrice": 90,
+    "edibility": 18,
+    "rowInSpriteSheet": 29,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      3,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Spangle Seeds",
+      "description": "Plant in summer. Takes 8 days to produce a vibrant tropical flower. Assorted colors.",
+      "id": 455,
+      "category": "Seeds -74",
+      "sellPrice": 25,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 50,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 62
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": [
+      {
+        "red": 0,
+        "green": 208,
+        "blue": 255
+      },
+      {
+        "red": 99,
+        "green": 255,
+        "blue": 210
+      },
+      {
+        "red": 255,
+        "green": 212,
+        "blue": 0
+      },
+      {
+        "red": 255,
+        "green": 144,
+        "blue": 122
+      },
+      {
+        "red": 255,
+        "green": 0,
+        "blue": 238
+      },
+      {
+        "red": 206,
+        "green": 91,
+        "blue": 255
+      }
+    ]
+  },
+  "595": {
+    "name": "Fairy Rose",
+    "description": "An old folk legend suggests that the sweet smell of this flower attracts fairies.",
+    "id": 595,
+    "category": "Basic -80",
+    "sellPrice": 290,
+    "edibility": 18,
+    "rowInSpriteSheet": 31,
+    "seasonsToGrowIn": [
+      "fall"
+    ],
+    "phaseDays": [
+      1,
+      4,
+      4,
+      3
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Fairy Seeds",
+      "description": "Plant in fall. Takes 12 days to produce a mysterious flower. Assorted Colors.",
+      "id": 425,
+      "category": "Seeds -74",
+      "sellPrice": 100,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 200,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 250
+        },
+        "travelingCart": {
+          "minPrice": 300,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": [
+      {
+        "red": 187,
+        "green": 0,
+        "blue": 255
+      },
+      {
+        "red": 119,
+        "green": 137,
+        "blue": 255
+      },
+      {
+        "red": 71,
+        "green": 227,
+        "blue": 255
+      },
+      {
+        "red": 255,
+        "green": 127,
+        "blue": 144
+      },
+      {
+        "red": 205,
+        "green": 178,
+        "blue": 255
+      },
+      {
+        "red": 140,
+        "green": 119,
+        "blue": 255
+      }
+    ]
+  },
+  "597": {
+    "name": "Blue Jazz",
+    "description": "The flower grows in a sphere to invite as many butterflies as possible.",
+    "id": 597,
+    "category": "Basic -80",
+    "sellPrice": 50,
+    "edibility": 18,
+    "rowInSpriteSheet": 27,
+    "seasonsToGrowIn": [
+      "spring"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Jazz Seeds",
+      "description": "Plant in spring. Takes 7 days to produce a blue puffball flower.",
+      "id": 429,
+      "category": "Seeds -74",
+      "sellPrice": 15,
+      "edibility": -300,
+      "vendor": {
+        "generalStore": {
+          "price": 30,
+          "yearAvailable": 1
+        },
+        "jojaMart": {
+          "price": 37
+        },
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": [
+      {
+        "red": 35,
+        "green": 127,
+        "blue": 255
+      },
+      {
+        "red": 109,
+        "green": 131,
+        "blue": 255
+      },
+      {
+        "red": 112,
+        "green": 207,
+        "blue": 255
+      },
+      {
+        "red": 191,
+        "green": 228,
+        "blue": 255
+      },
+      {
+        "red": 94,
+        "green": 121,
+        "blue": 255
+      },
+      {
+        "red": 40,
+        "green": 150,
+        "blue": 255
+      }
+    ]
+  },
+  "771": {
+    "name": "Fiber",
+    "description": "Raw material sourced from plants.",
+    "id": 771,
+    "category": "Basic -16",
+    "sellPrice": 1,
+    "edibility": -300,
+    "rowInSpriteSheet": 44,
+    "seasonsToGrowIn": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      2,
+      2
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": true,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {
+      "minHarvest": 4,
+      "maxHarvest": 7,
+      "maxHarvestIncreasePerFarmingLevel": 0,
+      "chanceForExtraCrops": 0.01
+    },
+    "seed": {
+      "name": "Fiber Seeds",
+      "description": "Plant these in any season. Does not require watering. Harvest with the scythe. Takes 7 days to grow.",
+      "id": 885,
+      "category": "Seeds -74",
+      "sellPrice": 5,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "830": {
+    "name": "Taro Root",
+    "description": "This starchy root is one of the most ancient crops.",
+    "id": 830,
+    "category": "Basic -75",
+    "sellPrice": 100,
+    "edibility": 15,
+    "rowInSpriteSheet": 42,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Taro Tuber",
+      "description": "Plant these in warm weather. Takes 10 days to mature. Grows faster if planted near a body of water.",
+      "id": 831,
+      "category": "Seeds -74",
+      "sellPrice": 20,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "832": {
+    "name": "Pineapple",
+    "description": "A sweet and tangy tropical treat.",
+    "id": 832,
+    "category": "Basic -79",
+    "sellPrice": 300,
+    "edibility": 55,
+    "rowInSpriteSheet": 43,
+    "seasonsToGrowIn": [
+      "summer"
+    ],
+    "phaseDays": [
+      1,
+      3,
+      3,
+      4,
+      3
+    ],
+    "regrowAfterHarvest": 7,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Pineapple Seeds",
+      "description": "Plant these in warm weather. Takes 14 days to mature, and keeps producing fruit after that.",
+      "id": 833,
+      "category": "Seeds -74",
+      "sellPrice": 240,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 720,
+          "maxPrice": 1200
+        }
+      }
+    },
+    "flowerColors": []
+  },
+  "889": {
+    "name": "Qi Fruit",
+    "description": "Mr. Qi has challenged you to ship 500 of these strange melons.",
+    "id": 889,
+    "category": "Basic -79",
+    "sellPrice": 1,
+    "edibility": 1,
+    "rowInSpriteSheet": 47,
+    "seasonsToGrowIn": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "phaseDays": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "regrowAfterHarvest": -1,
+    "scythe": false,
+    "trellis": false,
+    "canBeGiant": false,
+    "harvest": {},
+    "seed": {
+      "name": "Qi Bean",
+      "description": "Plant these in any season. Water every day to produce a Qi Fruit. Takes 4 days to mature.",
+      "id": 890,
+      "category": "Seeds -74",
+      "sellPrice": 1,
+      "edibility": -300,
+      "vendor": {
+        "travelingCart": {
+          "minPrice": 100,
+          "maxPrice": 1000
+        }
+      }
+    },
+    "flowerColors": []
+  }
+}

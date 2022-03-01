@@ -1,0 +1,96 @@
+.Planting-Table {
+  margin: 1rem;
+
+  display: grid;
+  align-items: center;
+
+  grid-template-rows:
+    [header] 1rem
+    repeat(var(--planting-count), [planting] auto)
+    [planting-new] auto
+    repeat(var(--aggregate-count), [aggregate] auto)
+  ;
+
+  grid-template-columns:
+    [left-start planting-quantity] auto
+    [planting-crop] auto
+    [planting-start] auto
+    [planting-fertilizer] auto
+    [left-end] repeat(28,
+      [day] minmax(auto, 25px) [day-center] minmax(auto, 25px) [day-end]
+    )
+    [foo] auto
+    [empty] 1fr
+  ;
+
+  grid-row-gap: .5rem;
+  // grid-column-gap: .25rem;
+
+  .Planting-Table-Headers {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .Event {
+    color: green;
+    z-index: 1;
+
+    & > svg {
+      overflow: visible;
+      display: block;
+      margin: 0 auto;
+      height: 30px;
+      width: 30px;
+
+      fill: currentColor;
+      stroke: rgba(black, 35%);
+      stroke-width: 2px;
+
+      &:not(:hover) foreignObject {
+        display: none;
+      }
+
+      foreignObject {
+        overflow: visible;
+
+        div {
+          width: 100px;
+          background-color: #eee;
+          border: 1px solid red;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .Event-Line {
+    height: 12px;
+    background-color: green;
+    border: 1px solid rgba(black, 35%);
+  }
+
+  .Planting-Table-Aggregates {
+    text-align: right;
+  }
+
+  .Cell-Heading {
+    font-weight: bold;
+  }
+
+  .Cell-Group > * {
+    // display: block;
+    grid-row: inherit;
+    grid-column: inherit;
+  }
+}
+
+.Planting-Table-Gridline {
+  width: 2px;
+  margin: -.25rem 0;
+  place-self: stretch center;
+  color: hsl(0, 0%, 65%);
+
+  div:nth-child(7n+1) > & {
+    color: hsl(0, 65%, 65%);
+  }
+}
