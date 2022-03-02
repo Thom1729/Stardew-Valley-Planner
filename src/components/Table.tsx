@@ -61,11 +61,11 @@ export const Table: FC<{
   ]);
 
   const eventsByPlanting = Object.fromEntries(
-    value.map((planting, i) => [i, getEvents(planting, options)])
+    value.map((planting, i) => [planting.id, getEvents(planting, options)])
   );
 
   const aggregatesByPlanting = Object.fromEntries(
-    Object.entries(eventsByPlanting).map(([i, events]) => [i, aggregateEvents(events, plantingAggregates)])
+    Object.entries(eventsByPlanting).map(([id, events]) => [id, aggregateEvents(events, plantingAggregates)])
   );
 
   const allEvents = Object.values(eventsByPlanting).flatMap(x => x);
@@ -107,7 +107,7 @@ export const Table: FC<{
           key={`planting-${planting.id}`}
           row={`planting ${i+1}`}
         >
-          {Array.from(pairs(eventsByPlanting[i])).map(([previous, event]) => {
+          {Array.from(pairs(eventsByPlanting[planting.id])).map(([previous, event]) => {
             return <Cell
               key={previous.day}
               column={`day-center ${previous.day} / day-center ${event.day}`}
@@ -115,7 +115,7 @@ export const Table: FC<{
             />;
           })}
 
-          {eventsByPlanting[i].map(event =>
+          {eventsByPlanting[planting.id].map(event =>
             <Cell key={event.day} column={`day ${event.day} / day-end ${event.day}`} className='Event'>
               <svg viewBox='-15 -15 30 30'>
                 <defs>
@@ -126,7 +126,19 @@ export const Table: FC<{
                 <circle r={15} clipPath="url(#clip)" />
                 <Star points={5} r1={5} r2={11} fill="white" stroke="none" />
                 <foreignObject x={0} y={15} height={0} width={'100%'}>
-                  <div>Hello, World!</div>
+                  <div>
+                    <div>Day {event.day}</div>
+                    <table>
+                      <tbody>
+                        {Object.entries(aggregatesByPlanting[planting.id][event.day - 1]).map(
+                          ([key, value]) => <tr key={key}>
+                            <th>{key}</th>
+                            <td><G g={value} /></td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
                 </foreignObject>
               </svg>
             </Cell>
@@ -139,9 +151,9 @@ export const Table: FC<{
       {Object.keys(plantingAggregates).map((name, j) =>
         <Cell group key={name} column={`planting-aggregate ${j+1}`}>
           <Cell row='header' className='Cell-Heading'>{name}</Cell>
-          {value.map((_, i) =>
+          {value.map((planting, i) =>
             <Cell key={i} row={`planting ${i+1}`}>
-              <G g={aggregatesByPlanting[i].map(x => x[name]).reduce((a,b) => a+b)} />
+              <G g={aggregatesByPlanting[planting.id].map(x => x[name]).reduce((a,b) => a+b)} />
             </Cell>
           )}
         </Cell>
@@ -196,6 +208,19 @@ const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
     [onChange, value],
   );
 
+  const move = useCallback(
+    (p: Planting, diff: number) => {
+      const index = value.indexOf(p) + diff;
+      const a = value.filter(p2 => p2.id !== p.id);
+      onChange([
+        ...a.slice(0, index),
+        p,
+        ...a.slice(index),
+      ]);
+    },
+    [onChange, value],
+  );
+
   return <Cell group>
     <Cell group
       className='Planting-Table-Headers'
@@ -216,6 +241,7 @@ const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
           planting={planting}
           plantingChanged={modifyPlanting}
           deletePlanting={deletePlanting}
+          move={move}
         />
       </Cell>
     )}
@@ -230,10 +256,12 @@ const PlantingControls: React.FC<{
   planting: Planting,
   plantingChanged: (value: Planting) => void,
   deletePlanting: (i: number) => void,
+  move: (value: Planting, index: number) => void,
 }> = ({
   planting,
   plantingChanged,
   deletePlanting,
+  move,
 }) => {
   const callbacks = usePropertyCallbacks(planting, plantingChanged);
   return <>
@@ -251,6 +279,10 @@ const PlantingControls: React.FC<{
     </Cell>
     <Cell group column='planting-fertilizer'>
       <FertilizerSelector value={planting.fertilizer} onChange={callbacks.fertilizer} />
+    </Cell>
+    <Cell column="planting-move">
+      {/*<Button onClick={() => { move(planting, -1); }}>↑</Button>*/}
+      <Button onClick={() => { move(planting, 1); }}>↓</Button>
     </Cell>
   </>;
 };

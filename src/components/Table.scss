@@ -18,6 +18,7 @@
     [planting-crop] auto
     [planting-start] auto
     [planting-fertilizer] auto
+    [planting-move] auto
     [left-end] repeat(28,
       [day] minmax(auto, 25px) [day-center] minmax(auto, 25px) [day-end]
     )
@@ -37,6 +38,10 @@
     color: green;
     z-index: 1;
 
+    &:hover {
+      z-index: 99;
+    }
+
     & > svg {
       overflow: visible;
       display: block;
@@ -53,12 +58,16 @@
       }
 
       foreignObject {
+        color: black;
         overflow: visible;
 
-        div {
-          width: 100px;
-          background-color: #eee;
-          border: 1px solid red;
+        & > div {
+          width: 120px;
+          margin-top: 0.25rem;
+          padding: .5rem;
+          border: 1px solid #aaa;
+          border-radius: 0.25rem;
+          background-color: white;
           transform: translateX(-50%);
         }
       }
