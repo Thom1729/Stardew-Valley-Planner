@@ -8,18 +8,20 @@
     [header] 1rem
     repeat(var(--planting-count), [planting] auto)
     [planting-new] auto
+    [aggregate-header] auto
     repeat(var(--aggregate-count), [aggregate] auto)
   ;
 
   grid-template-columns:
-    [left-start planting-quantity] auto
+    [left-start planting-delete] auto
+    [planting-quantity] auto
     [planting-crop] auto
     [planting-start] auto
     [planting-fertilizer] auto
     [left-end] repeat(28,
       [day] minmax(auto, 25px) [day-center] minmax(auto, 25px) [day-end]
     )
-    [foo] auto
+    repeat(var(--planting-aggregate-count), [planting-aggregate] auto)
     [empty] 1fr
   ;
 

@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 
-// import { type Fertilizer } from './types';
 import { fertilizerTypes, type FertilizerType } from './fertilizer';
 import { type ValueInput } from './components';
 

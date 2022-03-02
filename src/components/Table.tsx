@@ -1,5 +1,7 @@
 import './Table.scss';
 
+import { useState } from 'react';
+
 import { useCallback } from 'react';
 import type { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
@@ -24,6 +26,10 @@ const aggregateFunctions = {
   Profit: (event: Event) => event.revenue,
 };
 
+const plantingAggregates = {
+  Profit: (event: Event) => event.revenue,
+};
+
 const aggregateEvents = (
   events: Event[],
   functions: Record<string, AggregateFunction>
@@ -43,48 +49,23 @@ const aggregateEvents = (
   });
 };
 
-export const Table: FC<
-  ValueInput<Planting[]> & {
-    options: Options,
-  }
-> = ({
-  value,
-  onChange,
+export const Table: FC<{
+  options: Options,
+}> = ({
   options,
 }) => {
-  const newPlanting = useCallback(
-    () => {
-      onChange([...value, { plantDate: 1, quantity: 1, cropId: 24, fertilizer: null, }]);
-    },
-    [onChange, value],
-  );
-  const deletePlanting = useCallback(
-    (i: number) => {
-      onChange([
-          ...value.slice(0, i),
-          ...value.slice(i + 1),
-        ]);
-    },
-    [onChange, value],
-  );
-
-  const modifyPlanting = useCallback(
-    (i: number, p: Planting) => {
-      onChange([
-        ...value.slice(0, i),
-        p,
-        ...value.slice(i + 1),
-      ]);
-    },
-    [onChange, value]
-  );
+  const [value, onChange] = useState<Planting[]>([
+    { id: 1, plantDate: 1, quantity: 20, cropId: 24, fertilizer: null, },
+    { id: 2, plantDate: 6, quantity: 20, cropId: 192, fertilizer: null, },
+    { id: 3, plantDate: 13, quantity: 20, cropId: 400, fertilizer: null, },
+  ]);
 
   const eventsByPlanting = Object.fromEntries(
     value.map((planting, i) => [i, getEvents(planting, options)])
   );
 
   const aggregatesByPlanting = Object.fromEntries(
-    Object.entries(eventsByPlanting).map(([i, events]) => [i, aggregateEvents(events, aggregateFunctions)])
+    Object.entries(eventsByPlanting).map(([i, events]) => [i, aggregateEvents(events, plantingAggregates)])
   );
 
   const allEvents = Object.values(eventsByPlanting).flatMap(x => x);
@@ -99,6 +80,7 @@ export const Table: FC<
     style={{
       '--planting-count': value.length,
       '--aggregate-count': Object.keys(aggregateFunctions).length,
+      '--planting-aggregate-count': Object.keys(plantingAggregates).length,
     }}
   >
     <Cell group row='header' className='Planting-Table-Headers'>
@@ -107,7 +89,7 @@ export const Table: FC<
       )}
     </Cell>
 
-    <Cell group row="planting / planting-new">
+    <Cell group row="planting / aggregate-header">
       {month.map(day =>
         <Cell group key={day} column={`day ${day} / span 2`}>
           <svg viewBox="0 0 1 1" preserveAspectRatio="none" className="Planting-Table-Gridline">
@@ -117,35 +99,12 @@ export const Table: FC<
       )}
     </Cell>
 
-    <Cell group>
-      <Cell group
-        className='Planting-Table-Headers'
-        row='header'
-      >
-        <Cell column='planting-quantity'>Qty</Cell>
-        <Cell column='planting-crop'>Crop</Cell>
-        <Cell column='planting-start'>Date</Cell>
-        <Cell column='planting-fertilizer'>Fertilizer</Cell>
-      </Cell>
-
-      {value.map((planting, i) =>
-        <Cell group
-          key={`planting-${i}`}
-          row={`planting ${i+1}`}
-        >
-          <PlantingControls index={i} planting={planting} plantingChanged={modifyPlanting} />
-        </Cell>
-      )}
-
-      <Cell row='planting-new' column='left-start / left-end'>
-        <Button onClick={newPlanting}>New</Button>
-      </Cell>
-    </Cell>
+    <PlantingsControls value={value} onChange={onChange} />
 
     <Cell group>
       {value.map((planting, i) =>
         <Cell group
-          key={`planting-${i}`}
+          key={`planting-${planting.id}`}
           row={`planting ${i+1}`}
         >
           {Array.from(pairs(eventsByPlanting[i])).map(([previous, event]) => {
@@ -172,14 +131,24 @@ export const Table: FC<
               </svg>
             </Cell>
           )}
-          <Cell column="foo">
-            <G g={aggregatesByPlanting[i].map(a => a.Profit).reduce((a,b) => a+b)} />
-          </Cell>
         </Cell>
       )}
     </Cell>
 
-    <Cell group row='planting-new' className='Planting-Table-Headers'>
+    <Cell group className='Planting-Table-Aggregates'>
+      {Object.keys(plantingAggregates).map((name, j) =>
+        <Cell group key={name} column={`planting-aggregate ${j+1}`}>
+          <Cell row='header' className='Cell-Heading'>{name}</Cell>
+          {value.map((_, i) =>
+            <Cell key={i} row={`planting ${i+1}`}>
+              <G g={aggregatesByPlanting[i].map(x => x[name]).reduce((a,b) => a+b)} />
+            </Cell>
+          )}
+        </Cell>
+      )}
+    </Cell>
+
+    <Cell group row='aggregate-header' className='Planting-Table-Headers'>
       {month.map(day =>
         <Cell key={day} column={`day ${day} / day-end ${day}`}>{day}</Cell>
       )}
@@ -200,21 +169,77 @@ export const Table: FC<
   </div>;
 };
 
+const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
+  value,
+  onChange,
+}) => {
+  const newPlanting = useCallback(
+    () => {
+      onChange([...value,
+        { id: (1 + Math.max(0, ...value.map(p => p.id))), plantDate: 1, quantity: 1, cropId: 24, fertilizer: null, }
+      ]);
+    },
+    [onChange, value],
+  );
+
+  const deletePlanting = useCallback(
+    (id: number) => {
+      onChange(value.filter(p => p.id !== id));
+    },
+    [onChange, value],
+  );
+
+  const modifyPlanting = useCallback(
+    (planting: Planting) => {
+      onChange(value.map(p => (p.id === planting.id) ? planting : p));
+    },
+    [onChange, value],
+  );
+
+  return <Cell group>
+    <Cell group
+      className='Planting-Table-Headers'
+      row='header'
+    >
+      <Cell column='planting-quantity'>Qty</Cell>
+      <Cell column='planting-crop'>Crop</Cell>
+      <Cell column='planting-start'>Date</Cell>
+      <Cell column='planting-fertilizer'>Fertilizer</Cell>
+    </Cell>
+
+    {value.map((planting, i) =>
+      <Cell group
+        key={`planting-${planting.id}`}
+        row={`planting ${i+1}`}
+      >
+        <PlantingControls
+          planting={planting}
+          plantingChanged={modifyPlanting}
+          deletePlanting={deletePlanting}
+        />
+      </Cell>
+    )}
+
+    <Cell group row='planting-new' column='left-start / left-end'>
+      <Button style={{ justifySelf: 'end' }} onClick={newPlanting}>New</Button>
+    </Cell>
+  </Cell>;
+};
+
 const PlantingControls: React.FC<{
-  index: number,
   planting: Planting,
-  plantingChanged: (i: number, value: Planting) => void,
+  plantingChanged: (value: Planting) => void,
+  deletePlanting: (i: number) => void,
 }> = ({
-  index,
   planting,
   plantingChanged,
+  deletePlanting,
 }) => {
-  const onChange = useCallback(
-    (planting) => plantingChanged(index, planting),
-    [index, plantingChanged],
-  );
-  const callbacks = usePropertyCallbacks(planting, onChange);
+  const callbacks = usePropertyCallbacks(planting, plantingChanged);
   return <>
+    <Cell group column='planting-delete'>
+      <Button onClick={() => { deletePlanting(planting.id); }}>Delete</Button>
+    </Cell>
     <Cell group column='planting-quantity'>
       <NumberInput value={planting.quantity} onChange={callbacks.quantity} min={0} step={1} />
     </Cell>
