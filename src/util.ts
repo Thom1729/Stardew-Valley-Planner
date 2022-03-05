@@ -16,3 +16,9 @@ export function* pairs<T>(itr: Iterable<T>): Iterable<[T, T]> {
         previous = item;
     }
 }
+
+export function cmp<T>(a: T, b: T): number {
+    if (a > b) return 1;
+    else if (b > a) return -1;
+    else return 0;
+}
