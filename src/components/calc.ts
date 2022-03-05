@@ -3,6 +3,7 @@ import { type Options } from "./Options";
 
 import { Crop, crops, type Harvest } from '../data';
 import { fertilizerTypes } from './fertilizer';
+import { range } from '../util';
 
 export interface Event {
   planting: Planting,
@@ -62,6 +63,25 @@ function averageQuantity(crop: Crop): number {
   }
 }
 
+const tillerCategories = new Set(['Basic -79', 'Basic -80']); // Vegetables and flowers
+function getsTillerBonus(crop: Crop): boolean {
+  return tillerCategories.has(crop.category);
+}
+
+function getGrowthPhases(crop: Crop, speedup: number): number[] {
+  const { phaseDays } = crop;
+  const baseDays = phaseDays.reduce((a,b) => a+b)
+  const daysReduced = Math.ceil(baseDays * speedup);
+
+  const firstRemovableDay = (phaseDays[0] > 1 ? 0 : 1);
+
+  const ret = phaseDays.slice();
+  for (const i of Array.from(range(firstRemovableDay, Math.min(firstRemovableDay + daysReduced, phaseDays.length)))) {
+    ret[i] -= 1;
+  }
+  return ret;
+}
+
 function* _getEvents(planting: Planting, options: Options): Iterable<Event> {
   const crop = crops[planting.cropId];
   const fertilizer = planting.fertilizer ? fertilizerTypes[planting.fertilizer] : null;
@@ -69,14 +89,14 @@ function* _getEvents(planting: Planting, options: Options): Iterable<Event> {
   const regrowth = crop.regrowAfterHarvest === -1 ? Infinity : crop.regrowAfterHarvest;
   const harvestQuantity = averageQuantity(crop);
 
-  const tillerMultiplier = options.tiller ? 1.1 : 1;
+  const tillerMultiplier = (options.tiller && getsTillerBonus(crop)) ? 1.1 : 1;
   const qualityMultiplier = cropQualityMultiplier(options.farmingLevel, fertilizer?.quality ?? 0);
 
-  const totalGrowthTime = crop.phaseDays.reduce((a,b) => a+b);
-  const growthMultiplier = (options.agriculturalist ? 1.1 : 1) + (fertilizer?.speed ?? 0);
-  const growthTime = Math.round(totalGrowthTime / growthMultiplier);
+  const growthTime = getGrowthPhases(crop, (options.agriculturalist ? .1 : 0) + (fertilizer?.speed ?? 0)).reduce((a,b) => a+b);
 
-  const revenue = planting.quantity * harvestQuantity * crop.sellPrice * tillerMultiplier * qualityMultiplier;
+  // Only the first item per harvest gets the quality bonus
+  const baseRevenuePerCrop = (crop.sellPrice * qualityMultiplier) + (harvestQuantity - 1) * crop.sellPrice;
+  const revenue = baseRevenuePerCrop * tillerMultiplier * planting.quantity;
 
   const purchasePrice = cropPurchasePrice(crop);
 
