@@ -17,6 +17,7 @@ function App() {
       <div className='Header'>
         <h1>Stardew Valley Crop Planner</h1>
         <OptionsSelector value={options} onChange={setOptions} />
+        <a href="https://github.com/Thom1729/Stardew-Valley-Planner">GitHub</a>
       </div>
       <Table
         options={options}
