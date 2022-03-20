@@ -15,8 +15,7 @@ export interface Event {
 const cropQualityMultiplier = (farmingLevel: number, fertilizerLevel: number) => {
   const goldProbability = Math.min(1,
     0.2 * (farmingLevel / 10)
-    + 0.2 * fertilizerLevel
-    + ((farmingLevel + 2) / 12)
+    + (0.2 * fertilizerLevel * ((farmingLevel + 2) / 12))
     + 0.01
   );
   const silverProbability = (fertilizerLevel === 3 ? 1 : Math.min(.75, 2 * goldProbability));
