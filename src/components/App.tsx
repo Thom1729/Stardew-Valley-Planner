@@ -1,12 +1,12 @@
 import './App.scss';
 
-import { useState } from 'react';
+import { useSessionState } from '../useSessionState';
 
 import { OptionsSelector, type Options } from './Options';
 import { Table } from './Table';
 
 function App() {
-  const [options, setOptions] = useState<Options>({
+  const [options, setOptions] = useSessionState<Options>('options', {
     farmingLevel: 0,
     tiller: false,
     agriculturalist: false,

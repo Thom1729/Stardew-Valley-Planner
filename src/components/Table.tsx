@@ -1,6 +1,6 @@
 import './Table.scss';
 
-import { useState } from 'react';
+import { useSessionState } from '../useSessionState';
 
 import { useCallback } from 'react';
 import type { FC, HTMLAttributes } from 'react';
@@ -54,7 +54,7 @@ export const Table: FC<{
 }> = ({
   options,
 }) => {
-  const [value, onChange] = useState<Planting[]>([
+  const [value, onChange] = useSessionState<Planting[]>('plantings', [
     { id: 1, plantDate: 1, quantity: 20, cropId: 24, fertilizer: null, },
     { id: 2, plantDate: 6, quantity: 20, cropId: 192, fertilizer: null, },
     { id: 3, plantDate: 13, quantity: 20, cropId: 400, fertilizer: null, },
