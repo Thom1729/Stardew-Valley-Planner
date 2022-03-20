@@ -62,7 +62,11 @@ function averageQuantity(crop: Crop): number {
   }
 }
 
-const tillerCategories = new Set(['Basic -79', 'Basic -80']); // Vegetables and flowers
+const tillerCategories = new Set([
+  'Basic -75',
+  'Basic -79',
+  'Basic -80',
+]); // Vegetables and flowers
 function getsTillerBonus(crop: Crop): boolean {
   return tillerCategories.has(crop.category);
 }
