@@ -4,9 +4,9 @@ import './index.scss';
 import App from './components/App';
 
 declare module 'react' {
-    interface CSSProperties {
-        [key: `--${string}`]: string | number
-    }
+  interface CSSProperties {
+    [key: `--${string}`]: string | number
+  }
 }
 
 const root = createRoot(document.getElementById('root')!);
