@@ -1,7 +1,19 @@
-import { useCallback } from 'react';
-
 import { fertilizerTypes, type FertilizerType } from '../data';
-import { type ValueInput } from './components';
+import { Select, type ValueInput } from './components';
+
+const fertilizerOptions = [
+  {
+    key: '',
+    label: 'None',
+    value: null,
+  },
+  ...Object.entries(fertilizerTypes)
+    .map(([type, fertilizer]) => ({
+      key: type,
+      label: fertilizer.name,
+      value: type as FertilizerType,
+    }))
+];
 
 export const FertilizerSelector: React.FC<
   ValueInput<FertilizerType | null>
@@ -9,14 +21,9 @@ export const FertilizerSelector: React.FC<
   value,
   onChange,
 }) => {
-  const callback = useCallback(
-    e => { onChange(e.target.value || null); },
-    [onChange],
-  );
-  return <select value={value ?? ''} onChange={callback}>
-    <option value={''}>None</option>
-    {Object.entries(fertilizerTypes).map(([key, f]) =>
-      <option key={key} value={key}>{f.name}</option>
-    )}
-  </select>
+  return <Select
+    options={fertilizerOptions}
+    value={value}
+    onChange={onChange}
+  />;
 };
