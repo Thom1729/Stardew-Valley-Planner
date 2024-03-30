@@ -1,4 +1,4 @@
-import type { FertilizerType } from "./fertilizer";
+import type { FertilizerType } from "../data";
 
 export interface Planting {
   id: number,

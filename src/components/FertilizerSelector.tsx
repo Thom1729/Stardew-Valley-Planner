@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { fertilizerTypes, type FertilizerType } from './fertilizer';
+import { fertilizerTypes, type FertilizerType } from '../data';
 import { type ValueInput } from './components';
 
 export const FertilizerSelector: React.FC<

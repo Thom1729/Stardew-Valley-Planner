@@ -2,7 +2,7 @@ import type { Planting } from './types';
 import { type Options } from "./Options";
 
 import { Crop, crops, type Harvest } from '../data';
-import { fertilizerTypes } from './fertilizer';
+import { fertilizerTypes } from '../data';
 import { range } from '../util';
 
 export interface Event {
