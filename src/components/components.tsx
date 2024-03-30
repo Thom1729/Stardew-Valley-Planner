@@ -104,7 +104,7 @@ export const Checkbox: FC<ExtendBuiltin<'input', {
 
 type SelectOptionLeaf<TValue> = {
   label: string,
-  key: string | number,
+  key: string,
   value: TValue,
   children?: undefined,
 };
@@ -160,7 +160,7 @@ export function Select<TValue>({
     onChange,
     event => {
       const result = keyToValue.get(event.currentTarget.value);
-      if (result === undefined) throw new TypeError();
+      if (result === undefined) throw new TypeError(typeof event.currentTarget.value);
       return result;
     },
     [onChange, keyToValue],

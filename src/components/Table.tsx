@@ -6,7 +6,8 @@ import { useCallback } from 'react';
 import type { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 
-import { usePropertyCallbacks, Button, NumberInput, type ValueInput } from './components';
+import { Button, NumberInput } from './components';
+import { StateUpdater, useArraySubstates, useObjectSubstates } from './substate';
 import { CropSelector } from './CropSelector';
 
 import { Star } from './svg';
@@ -54,14 +55,14 @@ export const Table: FC<{
 }> = ({
   options,
 }) => {
-  const [value, onChange] = useSessionState<Planting[]>('plantings', [
+  const [value, onChange] = useSessionState<readonly Planting[]>('plantings', [
     { id: 1, plantDate: 1, quantity: 20, cropId: 24, fertilizer: null, },
     { id: 2, plantDate: 6, quantity: 20, cropId: 192, fertilizer: null, },
     { id: 3, plantDate: 13, quantity: 20, cropId: 400, fertilizer: null, },
   ]);
 
   const eventsByPlanting = Object.fromEntries(
-    value.map((planting, i) => [planting.id, getEvents(planting, options)])
+    value.map(planting => [planting.id, getEvents(planting, options)])
   );
 
   const aggregatesByPlanting = Object.fromEntries(
@@ -181,44 +182,24 @@ export const Table: FC<{
   </div>;
 };
 
-const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
+const PlantingsControls: React.FC<{
+  value: readonly Planting[],
+  onChange: StateUpdater<readonly Planting[]>,
+}> = ({
   value,
   onChange,
 }) => {
+  const substates = useArraySubstates(onChange);
+
   const newPlanting = useCallback(
-    () => {
-      onChange([...value,
-        { id: (1 + Math.max(0, ...value.map(p => p.id))), plantDate: 1, quantity: 1, cropId: 24, fertilizer: null, }
-      ]);
-    },
-    [onChange, value],
-  );
-
-  const deletePlanting = useCallback(
-    (id: number) => {
-      onChange(value.filter(p => p.id !== id));
-    },
-    [onChange, value],
-  );
-
-  const modifyPlanting = useCallback(
-    (planting: Planting) => {
-      onChange(value.map(p => (p.id === planting.id) ? planting : p));
-    },
-    [onChange, value],
-  );
-
-  const move = useCallback(
-    (p: Planting, diff: number) => {
-      const index = value.indexOf(p) + diff;
-      const a = value.filter(p2 => p2.id !== p.id);
-      onChange([
-        ...a.slice(0, index),
-        p,
-        ...a.slice(index),
-      ]);
-    },
-    [onChange, value],
+    () => substates.append(plantings => ({
+      id: 1 + Math.max(0, ...plantings.map(p => p.id)),
+      plantDate: 1,
+      quantity: 1,
+      cropId: 24,
+      fertilizer: null,
+    })),
+    [substates],
   );
 
   return <Cell group>
@@ -232,16 +213,16 @@ const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
       <Cell column='planting-fertilizer'>Fertilizer</Cell>
     </Cell>
 
-    {value.map((planting, i) =>
+    {value.map((planting, index) =>
       <Cell group
         key={`planting-${planting.id}`}
-        row={`planting ${i+1}`}
+        row={`planting ${index+1}`}
       >
         <PlantingControls
           planting={planting}
-          plantingChanged={modifyPlanting}
-          deletePlanting={deletePlanting}
-          move={move}
+          plantingChanged={substates.set(index)}
+          deletePlanting={value.length > 1 ? substates.delete(index) : undefined}
+          move={substates.moveBy(index)}
         />
       </Cell>
     )}
@@ -254,35 +235,35 @@ const PlantingsControls: React.FC<ValueInput<Planting[]>> = ({
 
 const PlantingControls: React.FC<{
   planting: Planting,
-  plantingChanged: (value: Planting) => void,
-  deletePlanting: (i: number) => void,
-  move: (value: Planting, index: number) => void,
+  plantingChanged: StateUpdater<Planting>,
+  deletePlanting: (() => void) | undefined,
+  move: (diff: number) => void,
 }> = ({
   planting,
   plantingChanged,
   deletePlanting,
   move,
 }) => {
-  const callbacks = usePropertyCallbacks(planting, plantingChanged);
+  const substates = useObjectSubstates(plantingChanged);
   return <>
     <Cell group column='planting-delete'>
-      <Button onClick={() => { deletePlanting(planting.id); }}>Delete</Button>
+      <Button onClick={deletePlanting} disabled={deletePlanting === undefined}>Delete</Button>
     </Cell>
     <Cell group column='planting-quantity'>
-      <NumberInput value={planting.quantity} onChange={callbacks.quantity} min={0} step={1} />
+      <NumberInput value={planting.quantity} onChange={substates.set('quantity')} min={0} step={1} />
     </Cell>
     <Cell group column='planting-crop'>
-      <CropSelector value={planting.cropId} onChange={callbacks.cropId} />
+      <CropSelector value={planting.cropId} onChange={substates.set('cropId')} />
     </Cell>
     <Cell group column='planting-start'>
-      <NumberInput value={planting.plantDate} onChange={callbacks.plantDate} min={1} max={28} step={1} />
+      <NumberInput value={planting.plantDate} onChange={substates.set('plantDate')} min={1} max={28} step={1} />
     </Cell>
     <Cell group column='planting-fertilizer'>
-      <FertilizerSelector value={planting.fertilizer} onChange={callbacks.fertilizer} />
+      <FertilizerSelector value={planting.fertilizer} onChange={substates.set('fertilizer')} />
     </Cell>
     <Cell column="planting-move">
-      {/*<Button onClick={() => { move(planting, -1); }}>↑</Button>*/}
-      <Button onClick={() => { move(planting, 1); }}>↓</Button>
+      {/*<Button onClick={() => { move(-1); }}>↑</Button>*/}
+      <Button onClick={() => { move(1); }}>↓</Button>
     </Cell>
   </>;
 };
