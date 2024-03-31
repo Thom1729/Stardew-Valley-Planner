@@ -1,7 +1,8 @@
 import './Options.scss';
 
 import { type FC } from 'react';
-import { usePropertyCallbacks, NumberInput, Checkbox, type ValueInput  } from './components';
+import { NumberInput, Checkbox  } from './components';
+import { useObjectSubstates, type StateUpdater } from './substate';
 
 export interface Options {
   farmingLevel: number,
@@ -9,17 +10,20 @@ export interface Options {
   agriculturalist: boolean,
 }
 
-export const OptionsSelector: FC<ValueInput<Options>> = ({
+export const OptionsSelector: FC<{
+  value: Options,
+  onChange: StateUpdater<Options>,
+}> = ({
   value,
   onChange,
 }) => {
-  const callbacks = usePropertyCallbacks(value, onChange);
+  const substates = useObjectSubstates(onChange);
   return <>
     <label>
       Farming Level
       <NumberInput
         value={value.farmingLevel}
-        onChange={callbacks.farmingLevel}
+        onChange={substates.set('farmingLevel')}
         min={0}
       />
     </label>
@@ -27,14 +31,14 @@ export const OptionsSelector: FC<ValueInput<Options>> = ({
       Tiller
       <Checkbox
         value={value.tiller}
-        onChange={callbacks.tiller}
+        onChange={substates.set('tiller')}
       />
     </label>
     <label>
       Agriculturalist
       <Checkbox
         value={value.agriculturalist}
-        onChange={callbacks.agriculturalist}
+        onChange={substates.set('agriculturalist')}
       />
     </label>
   </>

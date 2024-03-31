@@ -24,24 +24,6 @@ function useWrappedHandler<TEvent, TReturn>(
 
 //////////
 
-export const usePropertyCallbacks = <ValueType extends object>(
-  value: ValueType,
-  onChange: (value: ValueType) => void,
-): {
-  [k in keyof ValueType]: (value: ValueType[k]) => void
-} => {
-  return useMemo<{[k in keyof ValueType]: (value: ValueType[k]) => void}>(
-    () => {
-      return Object.fromEntries(
-        (Object.keys(value) as (keyof ValueType)[]).map(
-          p => [p, (v: ValueType[typeof p]) => onChange({ ...value, [p]: v })]
-        )
-      ) as any;
-    },
-    [value, onChange],
-  );
-};
-
 export const Button: FC<ExtendBuiltin<'button'>> = ({
   type = 'button',
   ...rest
