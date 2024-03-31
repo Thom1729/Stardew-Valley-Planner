@@ -1,7 +1,5 @@
 import './Table.scss';
 
-import { useSessionState } from '../useSessionState';
-
 import { useCallback } from 'react';
 import type { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
@@ -13,10 +11,10 @@ import { CropSelector } from './CropSelector';
 import { Star } from './svg';
 import { range, pairs } from '../util';
 
-import type { Planting } from './types';
+import type { Planting } from './state';
 
 import { getEvents, type Event } from './calc';
-import { Options } from './Options';
+import type { Options } from './App';
 import { FertilizerSelector } from './FertilizerSelector';
 
 type AggregateFunction = (event: Event) => number;
@@ -51,18 +49,16 @@ const aggregateEvents = (
 };
 
 export const Table: FC<{
+  plantings: readonly Planting[],
+  setPlantings: StateUpdater<readonly Planting[]>,
   options: Options,
 }> = ({
+  plantings,
+  setPlantings,
   options,
 }) => {
-  const [value, onChange] = useSessionState<readonly Planting[]>('plantings', [
-    { id: 1, plantDate: 1, quantity: 20, cropId: 24, fertilizer: null, },
-    { id: 2, plantDate: 6, quantity: 20, cropId: 192, fertilizer: null, },
-    { id: 3, plantDate: 13, quantity: 20, cropId: 400, fertilizer: null, },
-  ]);
-
   const eventsByPlanting = Object.fromEntries(
-    value.map(planting => [planting.id, getEvents(planting, options)])
+    plantings.map(planting => [planting.id, getEvents(planting, options)])
   );
 
   const aggregatesByPlanting = Object.fromEntries(
@@ -79,7 +75,7 @@ export const Table: FC<{
   return <div
     className='Planting-Table'
     style={{
-      '--planting-count': value.length,
+      '--planting-count': plantings.length,
       '--aggregate-count': Object.keys(aggregateFunctions).length,
       '--planting-aggregate-count': Object.keys(plantingAggregates).length,
     }}
@@ -100,10 +96,10 @@ export const Table: FC<{
       )}
     </Cell>
 
-    <PlantingsControls value={value} onChange={onChange} />
+    <PlantingsControls value={plantings} onChange={setPlantings} />
 
     <Cell group>
-      {value.map((planting, i) =>
+      {plantings.map((planting, i) =>
         <Cell group
           key={`planting-${planting.id}`}
           row={`planting ${i+1}`}
@@ -152,7 +148,7 @@ export const Table: FC<{
       {Object.keys(plantingAggregates).map((name, j) =>
         <Cell group key={name} column={`planting-aggregate ${j+1}`}>
           <Cell row='header' className='Cell-Heading'>{name}</Cell>
-          {value.map((planting, i) =>
+          {plantings.map((planting, i) =>
             <Cell key={i} row={`planting ${i+1}`}>
               <G g={aggregatesByPlanting[planting.id].map(x => x[name]).reduce((a,b) => a+b)} />
             </Cell>

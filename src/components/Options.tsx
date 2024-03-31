@@ -4,11 +4,7 @@ import { type FC } from 'react';
 import { NumberInput, Checkbox  } from './components';
 import { useObjectSubstates, type StateUpdater } from './substate';
 
-export interface Options {
-  farmingLevel: number,
-  tiller: boolean,
-  agriculturalist: boolean,
-}
+import type { Options } from './state';
 
 export const OptionsSelector: FC<{
   value: Options,
