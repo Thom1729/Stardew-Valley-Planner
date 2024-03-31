@@ -11,10 +11,9 @@ import { CropSelector } from './CropSelector';
 import { Star } from './svg';
 import { range, pairs } from '../util';
 
-import type { Planting } from './state';
+import type { Planting, Options } from './state';
 
 import { getEvents, type Event } from './calc';
-import type { Options } from './App';
 import { FertilizerSelector } from './FertilizerSelector';
 
 type AggregateFunction = (event: Event) => number;
