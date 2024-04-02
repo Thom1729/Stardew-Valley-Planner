@@ -1,8 +1,7 @@
 import './Table.scss';
 
 import { useCallback } from 'react';
-import type { FC, HTMLAttributes } from 'react';
-import classNames from 'classnames';
+import type { FC } from 'react';
 
 import { Button, NumberInput } from './components';
 import { StateUpdater, useArraySubstates, useObjectSubstates } from './substate';
@@ -15,6 +14,7 @@ import type { Planting, Options } from './state';
 
 import { getEvents, type Event } from './calc';
 import { FertilizerSelector } from './FertilizerSelector';
+import { Cell } from './DisplayHelpers';
 
 type AggregateFunction = (event: Event) => number;
 
@@ -280,31 +280,6 @@ const PlantingControls: React.FC<{
       <Button onClick={() => { move(1); }}>↓</Button>
     </Cell>
   </>;
-};
-
-const Cell: FC<{
-  row?: string | number,
-  column?: string | number,
-  group?: boolean,
-} & HTMLAttributes<HTMLDivElement>> = ({
-  row = 'inherit',
-  column = 'inherit',
-  group = false,
-  style,
-  ...props
-}) => {
-  return <div
-    className={classNames({
-      'Cell-Group': group,
-    })}
-    style={{
-      gridRow: row,
-      gridColumn: column,
-      display: group ? 'contents' : undefined,
-      ...style,
-    }}
-    {...props}
-  />;
 };
 
 const gFormat = new Intl.NumberFormat('en-us', {
