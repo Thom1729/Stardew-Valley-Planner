@@ -1,8 +1,7 @@
-import type { Planting } from './types';
-import { type Options } from "./Options";
+import type { Planting, Options } from "./state";
 
 import { Crop, crops, type Harvest } from '../data';
-import { fertilizerTypes } from '../data';
+import { fertilizerTypes, cropQualityMultiplier, cropQualityDistribution } from '../data';
 import { range } from '../util';
 
 export interface Event {
@@ -10,34 +9,8 @@ export interface Event {
   day: number,
   type: 'planting' | 'harvest',
   revenue: number,
+  qualityDistribution?: readonly [number, number, number, number],
 }
-
-const cropQualityMultiplier = (farmingLevel: number, fertilizerLevel: number) => {
-  const goldProbability = Math.min(1,
-    0.2 * (farmingLevel / 10)
-    + (0.2 * fertilizerLevel * ((farmingLevel + 2) / 12))
-    + 0.01
-  );
-  const silverProbability = (fertilizerLevel === 3 ? 1 : Math.min(.75, 2 * goldProbability));
-  const iridiumProbability = (fertilizerLevel === 3 ? goldProbability / 2 : 0);
-
-  const x = [
-    [2, iridiumProbability],
-    [1.5, goldProbability],
-    [1.25, silverProbability],
-    [1, 1],
-  ] as const;
-
-  let remainder = 1;
-  let multiplier = 0;
-  for (const [m, p] of x) {
-    const fraction = remainder * p;
-    multiplier += fraction * m;
-    remainder -= fraction;
-  }
-
-  return multiplier;
-};
 
 function cropPurchasePrice(crop: Crop): number {
   const vendor = crop.seed.vendor;
@@ -120,6 +93,10 @@ function* _getEvents(planting: Planting, options: Options): Iterable<Event> {
       day,
       type: 'harvest',
       revenue,
+      qualityDistribution: cropQualityDistribution(
+        options.farmingLevel,
+        fertilizer?.quality ?? 0,
+      )
     };
     day += regrowth;
   }

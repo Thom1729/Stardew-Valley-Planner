@@ -134,6 +134,25 @@ export const Table: FC<{
                         )}
                       </tbody>
                     </table>
+                    {event.qualityDistribution !== undefined
+                      ? <table>
+                        <tbody>
+                          <tr>
+                            <th>Iridium</th><td>{percentFormat.format(event.qualityDistribution[3])}</td>
+                          </tr>
+                          <tr>
+                            <th>Gold</th><td>{percentFormat.format(event.qualityDistribution[2])}</td>
+                          </tr>
+                          <tr>
+                            <th>Silver</th><td>{percentFormat.format(event.qualityDistribution[1])}</td>
+                          </tr>
+                          <tr>
+                            <th>Regular</th><td>{percentFormat.format(event.qualityDistribution[0])}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      : null
+                    }
                   </div>
                 </foreignObject>
               </svg>
@@ -291,6 +310,10 @@ const Cell: FC<{
 const gFormat = new Intl.NumberFormat('en-us', {
   useGrouping: true,
   maximumFractionDigits: 0,
+});
+
+const percentFormat = new Intl.NumberFormat('en-us', {
+  style: 'percent',
 });
 
 const G: React.FC<{
