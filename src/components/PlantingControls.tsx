@@ -7,6 +7,8 @@ import { CropSelector } from './CropSelector';
 import { Cell } from './DisplayHelpers';
 import { FertilizerSelector } from './FertilizerSelector';
 
+import type { Planting } from './state';
+
 export const PlantingsControls: FC<{
   value: readonly Planting[],
   onChange: StateUpdater<readonly Planting[]>,
