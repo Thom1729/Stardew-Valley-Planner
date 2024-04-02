@@ -30,10 +30,14 @@ export const Cell: FC<
   />;
 };
 
-const gFormat = new Intl.NumberFormat('en-us', {
+const goldFormat = new Intl.NumberFormat('en-us', {
   useGrouping: true,
   maximumFractionDigits: 0,
 });
+
+export function formatGold(n: number) {
+  return goldFormat.format(n) + 'g';
+}
 
 export const percentFormat = new Intl.NumberFormat('en-us', {
   style: 'percent',
@@ -43,4 +47,4 @@ export const G: React.FC<{
   g: number,
 }> = ({
   g,
-}) => <span>{gFormat.format(g)}g</span>;
+}) => <span>{goldFormat.format(g)}g</span>;
