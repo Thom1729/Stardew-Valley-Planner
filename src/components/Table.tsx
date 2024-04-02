@@ -120,38 +120,10 @@ export const Table: FC<{
                 <circle r={15} clipPath="url(#clip)" />
                 <Star points={5} r1={5} r2={11} fill="white" stroke="none" />
                 <foreignObject x={0} y={15} height={0} width={'100%'}>
-                  <div>
-                    <div>Day {event.day}</div>
-                    <table>
-                      <tbody>
-                        {Object.entries(aggregatesByPlanting[planting.id][event.day - 1]).map(
-                          ([key, value]) => <tr key={key}>
-                            <th>{key}</th>
-                            <td><G g={value} /></td>
-                          </tr>
-                        )}
-                      </tbody>
-                    </table>
-                    {event.qualityDistribution !== undefined
-                      ? <table>
-                        <tbody>
-                          <tr>
-                            <th>Iridium</th><td>{percentFormat.format(event.qualityDistribution[3])}</td>
-                          </tr>
-                          <tr>
-                            <th>Gold</th><td>{percentFormat.format(event.qualityDistribution[2])}</td>
-                          </tr>
-                          <tr>
-                            <th>Silver</th><td>{percentFormat.format(event.qualityDistribution[1])}</td>
-                          </tr>
-                          <tr>
-                            <th>Regular</th><td>{percentFormat.format(event.qualityDistribution[0])}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      : null
-                    }
-                  </div>
+                  <EventTooltip
+                    event={event}
+                    aggregates={aggregatesByPlanting[planting.id][event.day - 1]}
+                  />
                 </foreignObject>
               </svg>
             </Cell>
@@ -192,4 +164,45 @@ export const Table: FC<{
       )}
     </Cell>
   </div>;
+};
+
+const EventTooltip: FC<{
+  event: Event,
+  aggregates: Record<string, number>,
+}> = ({
+  event,
+  aggregates,
+}) => {
+  return <div>
+    <div>Day {event.day}</div>
+    <table>
+      <tbody>
+        {Object.entries(aggregates).map(
+          ([key, value]) => <tr key={key}>
+            <th>{key}</th>
+            <td><G g={value} /></td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+    {event.qualityDistribution !== undefined
+      ? <table>
+        <tbody>
+          <tr>
+            <th>Iridium</th><td>{percentFormat.format(event.qualityDistribution[3])}</td>
+          </tr>
+          <tr>
+            <th>Gold</th><td>{percentFormat.format(event.qualityDistribution[2])}</td>
+          </tr>
+          <tr>
+            <th>Silver</th><td>{percentFormat.format(event.qualityDistribution[1])}</td>
+          </tr>
+          <tr>
+            <th>Regular</th><td>{percentFormat.format(event.qualityDistribution[0])}</td>
+          </tr>
+        </tbody>
+      </table>
+      : null
+    }
+  </div>
 };
