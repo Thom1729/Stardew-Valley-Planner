@@ -29,3 +29,18 @@ export const Cell: FC<
     {...props}
   />;
 };
+
+const gFormat = new Intl.NumberFormat('en-us', {
+  useGrouping: true,
+  maximumFractionDigits: 0,
+});
+
+export const percentFormat = new Intl.NumberFormat('en-us', {
+  style: 'percent',
+});
+
+export const G: React.FC<{
+  g: number,
+}> = ({
+  g,
+}) => <span>{gFormat.format(g)}g</span>;

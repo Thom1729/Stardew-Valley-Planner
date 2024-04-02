@@ -12,6 +12,7 @@ import type { Planting, Options } from './state';
 import { getEvents, type Event } from './calc';
 import { Cell } from './DisplayHelpers';
 import { PlantingsControls } from './PlantingControls';
+import { percentFormat, G } from './DisplayHelpers';
 
 type AggregateFunction = (event: Event) => number;
 
@@ -192,18 +193,3 @@ export const Table: FC<{
     </Cell>
   </div>;
 };
-
-const gFormat = new Intl.NumberFormat('en-us', {
-  useGrouping: true,
-  maximumFractionDigits: 0,
-});
-
-const percentFormat = new Intl.NumberFormat('en-us', {
-  style: 'percent',
-});
-
-const G: React.FC<{
-  g: number,
-}> = ({
-  g,
-}) => <span>{gFormat.format(g)}g</span>;
