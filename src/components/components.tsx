@@ -3,7 +3,7 @@ import './components.scss';
 import { ChangeEvent, useMemo } from 'react';
 import type { FC } from 'react';
 
-type ExtendBuiltin<
+export type ExtendBuiltin<
   TElementName extends keyof JSX.IntrinsicElements,
   TAdditional extends object = {},
   TOmit extends string = never,
